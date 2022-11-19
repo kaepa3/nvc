@@ -7,18 +7,11 @@ import (
 )
 
 func main() {
-	launchVim()
-}
-func launchVim() int {
-	// Open text editor
-	err := openEditor("nvim")
-	if err != nil {
+	if err := openEditor("nvim"); err != nil {
 		fmt.Fprint(os.Stdout, fmt.Sprintf("failed open text editor. %s\n", err.Error()))
-		return 1
+		return
 	}
-	return 0
 }
-
 func openEditor(program string) error {
 	c := exec.Command(program, "~/.config/nvim")
 	c.Stdin = os.Stdin
