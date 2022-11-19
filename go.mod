@@ -1,3 +1,3 @@
-module kaepa3/nvc
+module github.com/kaepa3/nvc
 
 go 1.19
